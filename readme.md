@@ -9,7 +9,7 @@ introduciton in HTML script Element:
 introduciton in ES module:  
     `import Matrix from './lib/Matrix.js'`  
 ### create
-some examples:  
+examples:  
 * create without any argument provided, will default create 4-rank identity matrix:  
 `new Matrix();`  
 * create 4 rank square matrix, and transfer [...] as initial data:  
@@ -28,36 +28,37 @@ create 5-rank identity Matrix：
 ### modify
 `Matrix.prototype.setColumn()` and `Matrix.prototype.setRow()` are provided to modify the matrix by hand.  
 
-#### examples:  
-* create a 4-rank Zero matrix, and use `setColumn(int column,[...])` to modify it into an indentity matrix  
-```
-console.log(mat44.stringify()); 
-const mat44 = new Matrix(4);
-mat44.setColumn(1,[1,0,0,0]);  
-mat44.setColumn(2,[0,1,0,0]);
-mat44.setColumn(3,[0,0,1,0]);
-mat44.setColumn(4,[0,0,0,1]);
-console.log(mat44.stringify());
-```
-* Create a Zero matrix with 4 rows and 5 columns, and use `setRow(int row,[...])` to modify each row  
-```
-const mat45 = new Matrix(4,5);
-console.log(mat45.stringify());
-mat45.setRow(1,[1,0,0,0,0]);
-mat45.setRow(2,[0,1,0,0,0]);
-mat45.setRow(3,[0,0,1,0,0]);
-mat45.setRow(4,[0,0,0,1,0]);
-```
+examples:  
+>* create a 4-rank Zero matrix, and use `setColumn(int column,[...])` to modify it into an indentity matrix  
+>```
+>console.log(mat44.stringify()); 
+>const mat44 = new Matrix(4);
+>mat44.setColumn(1,[1,0,0,0]);  
+>mat44.setColumn(2,[0,1,0,0]);
+>mat44.setColumn(3,[0,0,1,0]);
+>mat44.setColumn(4,[0,0,0,1]);
+>console.log(mat44.stringify());
+>```
+>* Create a Zero matrix with 4 rows and 5 columns, and use `setRow(int row,[...])` to modify each row  
+>```
+>const mat45 = new Matrix(4,5);
+>console.log(mat45.stringify());
+>mat45.setRow(1,[1,0,0,0,0]);
+>mat45.setRow(2,[0,1,0,0,0]);
+>mat45.setRow(3,[0,0,1,0,0]);
+>mat45.setRow(4,[0,0,0,1,0]);
+>```
 ### compute
 #### add
 `Matrix.prototype.add(Matrix mat)`method will modify the origin matrix. As the parameter, matrix should be the 'homogeneous matrix', and this methods do nothing to its paramter.  
 >What the 'homogeneous' means is the two matrix compared have same row counts and column counts.  
-##### examples:
-```
-const mat44 = new Matrix(4,4);
-const mat44_2 = new Matrix(4,4);
-mat44.add(mat44_2);
-```
+
+examples:
+>```
+>const mat44 = new Matrix(4,4);
+>const mat44_2 = new Matrix(4,4);
+>mat44.add(mat44_2);
+>```
 #### minus  
 `Matrix.prototype.minus(Matrix mat);` 
 #### scalar mutiply
