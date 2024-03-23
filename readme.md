@@ -73,9 +73,21 @@ console.log(imat55.stringify());
 `Matrix.prototype.scalarDivide(double k);`  
 #### multiply
 `Matrix.prototype.multiply(Matrix mat);`  
-examples:  
-`let mat34 = new Matrix(3,4);`  
-`let mat43 = new Matrix(4,3);`  
-`let result33 = mat34.multiply(mat43);`  
-`console.log(result33.stringify())`  
+examples: 
+``` 
+let mat34 = new Matrix(3,4);
+let mat43 = new Matrix(4,3);
+let result33 = mat34.multiply(mat43);
+console.log(result33.stringify());
+```
 This methods will not modify the origin matrix and return new Matrix as result instead. The matrix used as a parameter and the original matrix must satisfy the matrix multiplicatio  rule, which means that the number of columns in the original matrix is equal to the number of rows in the parameter matrix.  
+#### transpose
+`Matrix.transpose(Matrix mat)`  
+or  
+`Matrix.prototype.transpose()`  
+example:
+```
+let mat25 = new Matrix(2,5,[1,2,3,4,5,6,7,8,9,0]);
+let mat52_1 = Matrix.transpose(mat25);
+let mat52_2 = mat25.transpose();
+```
